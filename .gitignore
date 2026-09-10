@@ -1,0 +1,91 @@
+# ============================================================
+#  智能环境监测系统 · .gitignore
+#  只提交 纯源码 + 工程配置，排除所有编译产物和无关文件
+# ============================================================
+
+# ---------- 1. Keil 编译产物 ----------
+MDK-ARM/01_freertos_template/*.o
+MDK-ARM/01_freertos_template/*.d
+MDK-ARM/01_freertos_template/*.crf
+MDK-ARM/01_freertos_template/*.axf
+MDK-ARM/01_freertos_template/*.map
+MDK-ARM/01_freertos_template/*.htm
+MDK-ARM/01_freertos_template/*.lst
+MDK-ARM/01_freertos_template/*.dep
+MDK-ARM/01_freertos_template/*.lnp
+MDK-ARM/01_freertos_template/*.sct
+MDK-ARM/01_freertos_template/*.bak
+MDK-ARM/01_freertos_template/*.tmp
+MDK-ARM/01_freertos_template/*.__i
+MDK-ARM/01_freertos_template/*.sim
+MDK-ARM/01_freertos_template/*.htm
+MDK-ARM/01_freertos_template/*.html
+MDK-ARM/01_freertos_template/*.tra
+
+# 全局编译产物（以防万一）
+*.o
+*.axf
+*.map
+*.crf
+*.lst
+*.dep
+*.lnp
+*.sct
+*.bak
+*.tmp
+
+# ---------- 2. Keil 个人窗口状态（含用户名，不该提交） ----------
+MDK-ARM/*.uvguix.*
+MDK-ARM/0*.uvguix.*
+
+# ---------- 3. Keil 调试/中间目录 ----------
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+MDK-ARM/01_freertos_template/DebugConfig/
+MDK-ARM/01_freertos_template/RTE/
+
+# ---------- 4. 备份文件 ----------
+*.bak
+*_backup.c
+
+# ---------- 5. 模板自带的游戏/音乐源码（与环境监测无关，精简掉） ----------
+nwatch/game1.c
+nwatch/game1.h
+nwatch/game2.c
+nwatch/game2.h
+nwatch/draw.c
+nwatch/draw.h
+nwatch/beep.c
+nwatch/beep.h
+nwatch/resources.c
+nwatch/resources.h
+nwatch/english.h
+nwatch/typedefs.h
+Core/Src/music.c
+
+# ---------- 6. CMSIS 里项目用不到的整块库（CubeMX 模板自带的包袱，体积大头） ----------
+#   工程 IncludePath 只用到 CMSIS/Device/ST/STM32F1xx/Include 和 CMSIS/Include 两处，
+#   下面这些一行都没引用，纯占体积（DSP/NN/Lib 共 800+ 文件，Lib 里还有二进制大文件）
+Drivers/CMSIS/DSP/
+Drivers/CMSIS/NN/
+Drivers/CMSIS/Lib/
+Drivers/CMSIS/Core/
+Drivers/CMSIS/Core_A/
+Drivers/CMSIS/RTOS/
+Drivers/CMSIS/RTOS2/
+Drivers/CMSIS/docs/
+
+# ---------- 7. 自己看的学习笔记（不上传） ----------
+PROJECT_DEEP_DIVE.md
+*.md.bak
+
+# ---------- 8. Editor / IDE 临时 ----------
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---------- 9. 我自己生成的一键脚本(不用提交) ----------
+git_setup.bat
+git_push.bat
+git上传助手.bat
